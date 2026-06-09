@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ATOM | Agência de Design Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #3b82f6;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            word-wrap: break-word;
+            /* Esconde o cursor padrão no desktop */
+            cursor: none;
+        }
+        
+        /* Garante que elementos interativos também não mostrem a seta */
+        a, button, .work-card, .price-card {
+            cursor: none;
+        }
+
+        h1, h2, h3, .font-syne {
+            font-family: 'Syne', sans-serif;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .work-card img {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .work-card:hover img {
+            transform: scale(1.05);
+        }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            z-index: 9999;
+            transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+            /* Garante que comece fora da tela */
+            top: -100px;
+            left: -100px;
+        }
+        .noise {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 100;
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 8s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="custom-cursor hidden md:block" id="cursor"></div>
+
+    <nav class="fixed w-full z-[90] mix-blend-difference py-4 md:py-8 px-4 md:px-10 flex justify-between items-center bg-black/5 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none">
+        <a href="#" class="text-xl md:text-2xl font-bold tracking-tighter">ATOM<span class="text-[10px] align-top">©</span></a>
+        <div class="flex gap-4 md:gap-10 text-[8px] md:text-[10px] uppercase tracking-[0.15em] md:tracking-[0.3em] font-bold">
+            <a href="#trabalhos" class="hover:opacity-50 transition">Projetos</a>
+            <a href="#servicos" class="hover:opacity-50 transition">Expertise</a>
+            <a href="#precos" class="hover:opacity-50 transition">Preços</a>
+            <a href="#contato" class="hover:opacity-50 transition">Contato</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center px-4 md:px-10 relative overflow-hidden">
+        <div class="mt-20 md:mt-0">
+            <h1 class="text-[12vw] sm:text-[12vw] md:text-[10vw] font-extrabold leading-[1.1] md:leading-[0.85] tracking-tighter uppercase mb-8">
+                AGÊNCIA <br class="hidden sm:block"> 
+                <span class="text-outline">DIGITAL</span> ATOM
+            </h1>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 md:gap-0">
+                <p class="max-w-xs md:max-w-md text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed">
+                    Experiências digitais de elite. Design visceral e performance absoluta para marcas que buscam o topo em 2026.
+                </p>
+                <div class="flex gap-4 self-end md:self-auto">
+                    <div class="w-14 h-14 md:w-20 md:h-20 border border-white/20 rounded-full flex items-center justify-center animate-spin-slow text-white/40 hover:text-white transition">
+                        <i class="fa-solid fa-arrow-down text-base md:text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trabalhos" class="py-16 md:py-32 px-4 md:px-10">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="mb-12 md:mb-20 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-8 md:pb-10 gap-4">
+                <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tighter italic">Showcase</h2>
+                <span class="text-[9px] md:text-sm font-normal tracking-[0.2em] opacity-40 uppercase">04 Demonstrações Interativas</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-12 md:gap-y-24">
+                
+                <div class="work-card group reveal sm:mt-20 md:mt-32 cursor-none" onclick="openModal('https://silvanacabeleireiros.vercel.app/')">
+                    <div class="relative overflow-hidden bg-zinc-900 aspect-[4/5] mb-4 md:mb-6 rounded-sm">
+                        <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
+                        
+                        <div class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir Projeto</span>
+                        </div>
+
+                        <div class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2 px-5 rounded-full flex items-center gap-2 shadow-lg">
+                            <span class="text-white text-[9px] font-bold uppercase tracking-[0.2em]">Expandir Projeto</span>
+                            <i class="fa-solid fa-expand text-[10px] text-white"></i>
+                        </div>
+
+                        <div class="w-full h-full bg-gradient-to-tr from-amber-600/40 to-orange-900/40 flex items-center justify-center border border-white/5">
+                            <iframe src="https://jginteriores.vercel.app/" scrolling="no" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">JG INTERIORES</h3>
+                    <p class="text-gray-500 text-[9px] md:text-sm uppercase tracking-widest">Landing Page</p>
+                </div>
+
+                <div class="work-card group reveal cursor-none" onclick="openModal('https://jginteriores.vercel.app/')">
+                    <div class="relative overflow-hidden bg-zinc-900 aspect-[4/5] mb-4 md:mb-6 rounded-sm">
+                        <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
+                        
+                        <div class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir Projeto</span>
+                        </div>
+
+                        <div class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2 px-5 rounded-full flex items-center gap-2 shadow-lg">
+                            <span class="text-white text-[9px] font-bold uppercase tracking-[0.2em]">Expandir Projeto</span>
+                            <i class="fa-solid fa-expand text-[10px] text-white"></i>
+                        </div>
+
+                        <div class="w-full h-full bg-gradient-to-tr from-emerald-600/40 to-teal-900/40 flex items-center justify-center border border-white/5">
+                            <iframe src="https://mestradoreiki.vercel.app/" scrolling="no" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">Mestre do Reiki</h3>
+                    <p class="text-gray-500 text-[9px] md:text-sm uppercase tracking-widest">Landing Page / Presell</p>
+                </div>
+
+                <div class="work-card group reveal sm:mt-20 md:mt-32 cursor-none" onclick="openModal('https://desafio-21-dias-sable.vercel.app/')">
+                    <div class="relative overflow-hidden bg-zinc-900 aspect-[4/5] mb-4 md:mb-6 rounded-sm">
+                        <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
+                        
+                        <div class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir Projeto</span>
+                        </div>
+
+                        <div class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2 px-5 rounded-full flex items-center gap-2 shadow-lg">
+                            <span class="text-white text-[9px] font-bold uppercase tracking-[0.2em]">Expandir Projeto</span>
+                            <i class="fa-solid fa-expand text-[10px] text-white"></i>
+                        </div>
+
+                        <div class="w-full h-full bg-gradient-to-tr from-purple-600/40 to-pink-900/40 flex items-center justify-center border border-white/5">
+                            <iframe src="https://desafio-21-dias-sable.vercel.app/" scrolling="no" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">Desafio 21 dias</h3>
+                    <p class="text-gray-500 text-[9px] md:text-sm uppercase tracking-widest">Landing Page / Presell</p>
+                </div>
+
+                <div class="work-card group reveal cursor-none" onclick="openModal('https://mestradoreiki.vercel.app/')">
+                    <div class="relative overflow-hidden bg-zinc-900 aspect-[4/5] mb-4 md:mb-6 rounded-sm">
+                        <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
+                        
+                        <div class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
+                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir Projeto</span>
+                        </div>
+
+                        <div class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2 px-5 rounded-full flex items-center gap-2 shadow-lg">
+                            <span class="text-white text-[9px] font-bold uppercase tracking-[0.2em]">Expandir Projeto</span>
+                            <i class="fa-solid fa-expand text-[10px] text-white"></i>
+                        </div>
+
+                        <div class="w-full h-full bg-gradient-to-tr from-blue-600/40 to-indigo-900/40 flex items-center justify-center border border-white/5">
+                            <iframe src="https://comparaprecobrasil.vercel.app/" scrolling="no" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">Compara Preço Brasil</h3>
+                    <p class="text-gray-500 text-[9px] md:text-sm uppercase tracking-widest">SaaS / Landing Page</p>
+                </div>
+
+            </div>
+        </div> </section>
+
+    <section id="servicos" class="py-16 md:py-32 px-4 md:px-10 bg-white text-black">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[12vw] sm:text-[10vw] md:text-[8vw] font-extrabold uppercase leading-[0.9] mb-12 md:mb-20 tracking-tighter">Nosso Foco</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16">
+                <div>
+                    <span class="text-[10px] font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">01. Web Design</span>
+                    <p class="text-lg md:text-xl leading-snug font-medium">Interfaces que paralisam o scroll e constroem autoridade visual instantânea.</p>
+                </div>
+                <div>
+                    <span class="text-[10px] font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">02. Performance</span>
+                    <p class="text-lg md:text-xl leading-snug font-medium">Infraestrutura Vercel Edge. Sites que carregam no piscar de olhos.</p>
+                </div>
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <span class="text-[10px] font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">03. Resultados</span>
+                    <p class="text-lg md:text-xl leading-snug font-medium">Landing pages desenhadas sob a ótica da conversão e psicologia de vendas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precos" class="py-16 md:py-40 px-4 md:px-10">
+        <div class="max-w-6xl mx-auto">
+        <!-- <div class="max-w-screen-2xl mx-auto"></div> -->
+            <div class="text-center mb-16 md:mb-24">
+                <h2 class="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-4 italic">Investimento</h2>
+                <p class="text-gray-500 uppercase tracking-[0.2em] text-[9px] md:text-xs">Tabela 2026 / Oportunidade Limitada</p>
+            </div>
+
+            <div class="space-y-24">
+                <div class="reveal">
+                    <h3 class="text-xl md:text-3xl font-bold uppercase mb-8 border-l-4 border-blue-600 pl-4">1. Landing Page / Portfólio</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border border-white/5 p-8 bg-zinc-950/50 hover:bg-zinc-900 transition-colors group">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-6">Versão Avulsa</p>
+                            <h4 class="text-2xl font-bold uppercase mb-8">Landing Page</h4>
+                            <div class="mb-8">
+                                <span class="text-4xl font-extrabold tracking-tighter">R$ 399,00</span>
+                                <p class="text-[10px] uppercase opacity-40 mt-2">• Pagamento único <br>• Entrega de código <br>• Sem manutenção<br>• Sem Hospedagem</p>
+                            </div>
+                            <a href="https://wa.me/SEUNUMERO" class="block text-center border border-white/20 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition cursor-none">Solicitar</a>
+                        </div>
+                        <div class="border-2 border-blue-600 p-8 md:p-10 bg-zinc-950 relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 bg-blue-600 text-white text-[9px] font-bold uppercase py-1 px-4 tracking-widest">50% OFF</div>
+                            <p class="text-[10px] uppercase tracking-widest text-blue-500 mb-6 font-bold">PACOTE DE MANUTENÇÃO ATOM</p>
+                            <h4 class="text-3xl md:text-4xl font-bold uppercase mb-10">Landing Page +<br> HOSPEDAGEM</h4>
+                            <div class="mb-10 flex items-baseline gap-4">
+                                <span class="text-5xl md:text-6xl font-extrabold tracking-tighter text-blue-500">R$ 199,00</span>
+                                <span class="text-sm text-gray-500 line-through">R$ 399,00</span>
+                            </div>
+                            <p class="text-[11px] uppercase font-bold text-gray-400 tracking-widest">+ R$ 59,00/MÊS DE GESTÃO TOTAL</p>
+                            <p class="text-[10px] uppercase opacity-40 mt-2 mb-10">• Entrega de código <br>• Manutenção Inclusa<br>• Hospedagem Inclusa<br>• Domínio Incluso </p>
+                            <a href="https://wa.me/SEUNUMERO" class="block text-center bg-blue-600 text-white py-5 rounded-full text-[12px] font-bold uppercase tracking-[0.1em] hover:bg-blue-700 transition cursor-none">ASSINAR E GANHAR DESCONTO</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="text-xl md:text-3xl font-bold uppercase mb-8 border-l-4 border-white pl-4">2. Site Institucional</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border border-white/5 p-8 bg-zinc-950/50 hover:bg-zinc-900 transition-colors group">
+                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-6">Versão Avulsa</p>
+                            <h4 class="text-2xl font-bold uppercase mb-8">Site Institucional</h4>
+                            <div class="mb-8">
+                                <span class="text-4xl font-extrabold tracking-tighter">R$ 850,00</span>
+                                <p class="text-[10px] uppercase opacity-40 mt-2">• Pagamento único <br>• Entrega de código <br>• Sem manutenção <br>• Sem Hospedagem</p>
+                            </div>
+                            <a href="https://wa.me/SEUNUMERO" class="block text-center border border-white/20 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition cursor-none">Solicitar</a>
+                        </div>
+                        <div class="border-2 border-blue-600 p-8 md:p-10 bg-zinc-950 relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 bg-blue-600 text-white text-[9px] font-bold uppercase py-1 px-4 tracking-widest">66% OFF</div>
+                            <p class="text-[10px] uppercase tracking-widest text-blue-500 mb-6 font-bold">PACOTE DE MANUTENÇÃO ATOM</p>
+                            <h4 class="text-3xl md:text-4xl font-bold uppercase mb-10">SITE +<br> HOSPEDAGEM</h4>
+                            <div class="mb-10 flex items-baseline gap-4">
+                                <span class="text-5xl md:text-6xl font-extrabold tracking-tighter text-blue-500">R$ 290,00</span>
+                                <span class="text-sm text-gray-500 line-through">R$ 850,00</span>
+                            </div>
+                            <p class="text-[11px] uppercase font-bold text-gray-400  tracking-widest">+ R$ 59,00/MÊS DE GESTÃO TOTAL </p>
+                            <p class="text-[10px] uppercase opacity-40 mt-2 mb-10">• Entrega de código <br>• Manutenção Inclusa<br>• Hospedagem Inclusa<br>• Domínio Incluso </p>
+                            <a href="https://wa.me/SEUNUMERO" class="block text-center bg-white text-black py-5 rounded-full text-[12px] font-bold uppercase tracking-[0.1em] hover:bg-gray-200 transition cursor-none">ASSINAR E GANHAR DESCONTO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="py-16 md:py-32 px-4 md:px-10 border-t border-white/10 relative overflow-hidden">
+        <div class="absolute -bottom-10 -right-10 text-[35vw] font-black text-white/[0.02] pointer-events-none leading-none select-none z-0">
+            2026
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 mb-16 md:mb-20">
+                <div>
+                    <h2 class="text-4xl md:text-7xl font-bold uppercase tracking-tighter mb-8 md:mb-10 leading-[0.9]">VAMOS CRIAR<br> O SEU LEGADO.</h2>
+                    <a href="https://wa.me/SEUNUMERO" class="text-lg md:text-3xl font-bold border-b-2 border-white hover:opacity-50 transition pb-2 inline-block cursor-none">WhatsApp Agência ATOM</a>
+                </div>
+                
+                <div class="flex flex-col justify-between">
+                    <div class="grid grid-cols-2 gap-8 text-[9px] md:text-xs text-gray-500 uppercase tracking-widest">
+                        <div class="space-y-3">
+                            <p class="text-white font-bold tracking-[0.3em]">Serviços</p>
+                            <p>Landing Pages</p>
+                            <p>Sites Institucionais</p>
+                            <p>E-mail Marketing</p>
+                        </div>
+                        <div class="space-y-3">
+                            <p class="text-white font-bold tracking-[0.3em]">Social</p>
+                            <p>Instagram</p>
+                            <p>LinkedIn</p>
+                            <p>Behance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-white/5 opacity-30 text-[8px] md:text-[10px] uppercase tracking-widest gap-4">
+                <p>&copy; 2026 Agência ATOM</p>
+                <p>Design Minimalista de Alta Performance</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="projectModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-10">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md cursor-pointer" onclick="closeModal()"></div>
+        
+        <div class="relative w-full max-w-6xl h-[85vh] bg-zinc-950 border border-white/10 rounded-lg flex flex-col overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+            
+            <div class="flex justify-between items-center p-4 border-b border-white/10 bg-zinc-900/50">
+                <div class="flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80 cursor-pointer hover:bg-red-500 transition-colors" onclick="closeModal()"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <button onclick="closeModal()" class="text-white/50 hover:text-white transition-colors uppercase text-[10px] tracking-widest font-bold cursor-none">
+                    Fechar [ESC]
+                </button>
+            </div>
+
+            <div class="flex-1 w-full h-full bg-white relative">
+                <div class="absolute inset-0 flex items-center justify-center bg-zinc-950 -z-10">
+                    <i class="fa-solid fa-circle-notch fa-spin text-white/20 text-3xl"></i>
+                </div>
+                <iframe id="modalIframe" src="" class="w-full h-full z-10 relative bg-white" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        if (window.matchMedia("(pointer: fine)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                if (cursor) {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                }
+            });
+
+            document.querySelectorAll('a, .work-card, button').forEach(el => {
+                el.addEventListener('mouseenter', () => { if(cursor) cursor.style.transform = 'scale(3)'; });
+                el.addEventListener('mouseleave', () => { if(cursor) cursor.style.transform = 'scale(1)'; });
+            });
+        }
+
+        // Intersection Observer (Animação de Reveal)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Lógica do Modal de Projetos
+        const modal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+        const modalIframe = document.getElementById('modalIframe');
+
+        function openModal(url) {
+            // Esconde o cursor customizado para não atrapalhar no modal
+            if (cursor) cursor.style.display = 'none';
+            
+            modalIframe.src = url;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Delay para a transição funcionar
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            // Volta o cursor customizado
+            if (cursor && window.matchMedia("(pointer: fine)").matches) {
+                cursor.style.display = 'block';
+            }
+
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            // Aguarda a animação terminar para esconder a div
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                modalIframe.src = ''; // Limpa o src
+            }, 300);
+        }
+
+        // Fechar modal com a tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
