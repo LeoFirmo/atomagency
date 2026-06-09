@@ -7,7 +7,9 @@
     <title>ATOM | Agência de Design Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --accent: #3b82f6;
@@ -93,6 +95,7 @@
             from {
                 transform: rotate(0deg);
             }
+
             to {
                 transform: rotate(360deg);
             }
@@ -106,12 +109,27 @@
         .hamburger-line {
             transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1), width 0.3s ease;
         }
+
         .menu-open .line-1 {
             transform: translateY(5px) rotate(45deg);
         }
+
         .menu-open .line-2 {
             transform: translateY(-5px) rotate(-45deg);
             width: 100% !important;
+        }
+
+
+
+        @media (max-width: 420px) {
+            .hero-title {
+                font-size: 11vw !important;
+                /* Diminui ligeiramente o tamanho geral */
+            }
+
+            .hero-title span.text-outline {
+                font-size: 11vw !important;
+            }
         }
     </style>
 </head>
@@ -120,9 +138,11 @@
     <div class="noise"></div>
     <div class="custom-cursor hidden md:block" id="cursor"></div>
 
-    <nav class="fixed w-full z-[90] mix-blend-difference py-6 px-6 md:py-8 md:px-10 flex justify-between items-center bg-black/5 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none">
-        <a href="#" class="text-xl md:text-2xl font-bold tracking-tighter">ATOM<span class="text-[10px] align-top">©</span></a>
-        
+    <nav
+        class="fixed w-full z-[90] mix-blend-difference py-6 px-6 md:py-8 md:px-10 flex justify-between items-center bg-black/5 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none">
+        <a href="#" class="text-xl md:text-2xl font-bold tracking-tighter">ATOM<span
+                class="text-[10px] align-top">©</span></a>
+
         <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.3em] font-bold">
             <a href="#trabalhos" class="hover:opacity-50 transition">Projetos</a>
             <a href="#servicos" class="hover:opacity-50 transition">Expertise</a>
@@ -130,13 +150,15 @@
             <a href="#contato" class="hover:opacity-50 transition">Contato</a>
         </div>
 
-        <button id="menuBtn" class="flex md:hidden flex-col justify-center items-end gap-[8px] w-8 h-8 z-[100] focus:outline-none cursor-none">
+        <button id="menuBtn"
+            class="flex md:hidden flex-col justify-center items-end gap-[8px] w-8 h-8 z-[100] focus:outline-none cursor-none">
             <span class="hamburger-line line-1 w-8 h-[2px] bg-white block"></span>
             <span class="hamburger-line line-2 w-5 h-[2px] bg-white block"></span>
         </button>
     </nav>
 
-    <div id="menuOverlay" class="fixed inset-0 bg-zinc-950 z-[85] flex flex-col justify-between p-8 pt-32 translate-x-full transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) md:hidden">
+    <div id="menuOverlay"
+        class="fixed inset-0 bg-zinc-950 z-[85] flex flex-col justify-between p-8 pt-32 translate-x-full transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) md:hidden">
         <div class="flex flex-col gap-8 font-syne text-4xl sm:text-5xl font-extrabold uppercase tracking-tighter">
             <a href="#trabalhos" class="mobile-link text-outline hover:text-white transition duration-300">.Projetos</a>
             <a href="#servicos" class="mobile-link text-outline hover:text-white transition duration-300">.Expertise</a>
@@ -145,22 +167,26 @@
         </div>
         <div class="border-t border-white/10 pt-6 space-y-2">
             <p class="text-xs uppercase tracking-widest text-zinc-500">Vamos criar seu legado</p>
-            <a href="https://wa.me/5521980511433" class="block font-bold text-sm text-blue-500 uppercase tracking-wider">WhatsApp Agência ATOM</a>
+            <a href="https://wa.me/5521980511433"
+                class="block font-bold text-sm text-blue-500 uppercase tracking-wider">WhatsApp Agência ATOM</a>
         </div>
     </div>
 
     <section class="min-h-screen flex flex-col justify-center px-6 md:px-10 relative overflow-hidden">
         <div class="mt-20 md:mt-0">
-            <h1 class="text-[12vw] sm:text-[12vw] md:text-[10vw] font-extrabold leading-[1.1] md:leading-[0.85] tracking-tighter uppercase mb-8">
+            <h1
+                class="hero-title text-[12vw] sm:text-[12vw] md:text-[10vw] font-extrabold leading-[1.1] md:leading-[0.85] tracking-tighter uppercase mb-8">
                 AGÊNCIA <br class="hidden sm:block">
                 <span class="text-outline">DIGITAL</span> ATOM
             </h1>
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 md:gap-0">
                 <p class="max-w-xs md:max-w-md text-gray-400 text-sm md:text-base leading-relaxed">
-                    Experiências digitais de elite. Design visceral e performance absoluta para marcas que buscam o topo em 2026.
+                    Experiências digitais de elite. Design visceral e performance absoluta para marcas que buscam o topo
+                    em 2026.
                 </p>
                 <div class="flex gap-4 self-end md:self-auto">
-                    <div class="w-14 h-14 md:w-20 md:h-20 border border-white/20 rounded-full flex items-center justify-center animate-spin-slow text-white/40 hover:text-white transition">
+                    <div
+                        class="w-14 h-14 md:w-20 md:h-20 border border-white/20 rounded-full flex items-center justify-center animate-spin-slow text-white/40 hover:text-white transition">
                         <i class="fa-solid fa-arrow-down text-base md:text-xl"></i>
                     </div>
                 </div>
@@ -170,82 +196,114 @@
 
     <section id="trabalhos" class="py-16 md:py-32 px-6 md:px-10">
         <div class="max-w-screen-2xl mx-auto">
-            <div class="mb-12 md:mb-20 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-8 md:pb-10 gap-4">
+            <div
+                class="mb-12 md:mb-20 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-8 md:pb-10 gap-4">
                 <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tighter italic">Showcase</h2>
-                <span class="text-xs md:text-sm font-normal tracking-[0.2em] opacity-40 uppercase">04 Demonstrações Interativas</span>
+                <span class="text-xs md:text-sm font-normal tracking-[0.2em] opacity-40 uppercase">04 Demonstrações
+                    Interativas</span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-12 md:gap-y-24">
-                <div class="work-card group reveal sm:mt-20 md:mt-32 cursor-none" onclick="openModal('https://silvanacabeleireiros.vercel.app/')">
+                <div class="work-card group reveal sm:mt-20 md:mt-32 cursor-none"
+                    onclick="openModal('https://silvanacabeleireiros.vercel.app/')">
                     <div class="relative overflow-hidden bg-zinc-900 aspect-[4/5] mb-4 md:mb-6 rounded-sm">
                         <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
-                        <div class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
-                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir Projeto</span>
+                        <div
+                            class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
+                            <span
+                                class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir
+                                Projeto</span>
                         </div>
-                        <div class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2.5 px-5 rounded-full flex items-center gap-2 shadow-lg">
+                        <div
+                            class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2.5 px-5 rounded-full flex items-center gap-2 shadow-lg">
                             <span class="text-white text-xs font-bold uppercase tracking-[0.2em]">Expandir</span>
                             <i class="fa-solid fa-expand text-xs text-white"></i>
                         </div>
-                        <div class="w-full h-full bg-gradient-to-tr from-amber-600/40 to-orange-900/40 flex items-center justify-center border border-white/5">
-                            <iframe src="https://silvanacabeleireiros.vercel.app/" scrolling="no" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        <div
+                            class="w-full h-full bg-gradient-to-tr from-amber-600/40 to-orange-900/40 flex items-center justify-center border border-white/5">
+                            <iframe src="https://silvanacabeleireiros.vercel.app/" scrolling="no"
+                                class="w-full h-full pointer-events-none" frameborder="0"></iframe>
                         </div>
                     </div>
-                    <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">Silvana Cabeleleiros & Estética</h3>
+                    <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">Silvana Cabeleleiros & Estética
+                    </h3>
                     <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mt-1">Landing Page</p>
                 </div>
 
                 <div class="work-card group reveal cursor-none" onclick="openModal('https://jginteriores.vercel.app/')">
                     <div class="relative overflow-hidden bg-zinc-900 aspect-[4/5] mb-4 md:mb-6 rounded-sm">
                         <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
-                        <div class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
-                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir Projeto</span>
+                        <div
+                            class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
+                            <span
+                                class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir
+                                Projeto</span>
                         </div>
-                        <div class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2.5 px-5 rounded-full flex items-center gap-2 shadow-lg">
+                        <div
+                            class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2.5 px-5 rounded-full flex items-center gap-2 shadow-lg">
                             <span class="text-white text-xs font-bold uppercase tracking-[0.2em]">Expandir</span>
                             <i class="fa-solid fa-expand text-xs text-white"></i>
                         </div>
-                        <div class="w-full h-full bg-gradient-to-tr from-emerald-600/40 to-teal-900/40 flex items-center justify-center border border-white/5">
-                            <iframe src="https://jginteriores.vercel.app/" scrolling="no" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        <div
+                            class="w-full h-full bg-gradient-to-tr from-emerald-600/40 to-teal-900/40 flex items-center justify-center border border-white/5">
+                            <iframe src="https://jginteriores.vercel.app/" scrolling="no"
+                                class="w-full h-full pointer-events-none" frameborder="0"></iframe>
                         </div>
                     </div>
                     <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">JG INTERIORES</h3>
                     <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mt-1">Landing Page</p>
                 </div>
 
-                <div class="work-card group reveal sm:mt-20 md:mt-32 cursor-none" onclick="openModal('https://desafio-21-dias-sable.vercel.app/')">
+                <div class="work-card group reveal sm:mt-20 md:mt-32 cursor-none"
+                    onclick="openModal('https://desafio-21-dias-sable.vercel.app/')">
                     <div class="relative overflow-hidden bg-zinc-900 aspect-[4/5] mb-4 md:mb-6 rounded-sm">
                         <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
-                        <div class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
-                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir Projeto</span>
+                        <div
+                            class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
+                            <span
+                                class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir
+                                Projeto</span>
                         </div>
-                        <div class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2.5 px-5 rounded-full flex items-center gap-2 shadow-lg">
+                        <div
+                            class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2.5 px-5 rounded-full flex items-center gap-2 shadow-lg">
                             <span class="text-white text-xs font-bold uppercase tracking-[0.2em]">Expandir</span>
                             <i class="fa-solid fa-expand text-xs text-white"></i>
                         </div>
-                        <div class="w-full h-full bg-gradient-to-tr from-purple-600/40 to-pink-900/40 flex items-center justify-center border border-white/5">
-                            <iframe src="https://desafio-21-dias-sable.vercel.app/" scrolling="no" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        <div
+                            class="w-full h-full bg-gradient-to-tr from-purple-600/40 to-pink-900/40 flex items-center justify-center border border-white/5">
+                            <iframe src="https://desafio-21-dias-sable.vercel.app/" scrolling="no"
+                                class="w-full h-full pointer-events-none" frameborder="0"></iframe>
                         </div>
                     </div>
                     <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">Desafio 21 dias</h3>
-                    <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mt-1">Landing Page / Presell</p>
+                    <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mt-1">Landing Page / Presell
+                    </p>
                 </div>
 
-                <div class="work-card group reveal cursor-none" onclick="openModal('https://mestradoreiki.vercel.app/')">
+                <div class="work-card group reveal cursor-none"
+                    onclick="openModal('https://mestradoreiki.vercel.app/')">
                     <div class="relative overflow-hidden bg-zinc-900 aspect-[4/5] mb-4 md:mb-6 rounded-sm">
                         <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
-                        <div class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
-                            <span class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir Projeto</span>
+                        <div
+                            class="hidden md:flex absolute inset-0 z-20 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center backdrop-blur-[2px]">
+                            <span
+                                class="text-white text-[10px] font-bold uppercase tracking-[0.2em] border border-white/30 py-3 px-8 rounded-full">Expandir
+                                Projeto</span>
                         </div>
-                        <div class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2.5 px-5 rounded-full flex items-center gap-2 shadow-lg">
+                        <div
+                            class="md:hidden absolute bottom-4 right-4 z-20 bg-black/50 backdrop-blur-md border border-white/20 py-2.5 px-5 rounded-full flex items-center gap-2 shadow-lg">
                             <span class="text-white text-xs font-bold uppercase tracking-[0.2em]">Expandir</span>
                             <i class="fa-solid fa-expand text-xs text-white"></i>
                         </div>
-                        <div class="w-full h-full bg-gradient-to-tr from-blue-600/40 to-indigo-900/40 flex items-center justify-center border border-white/5">
-                            <iframe src="https://mestradoreiki.vercel.app/" scrolling="no" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        <div
+                            class="w-full h-full bg-gradient-to-tr from-blue-600/40 to-indigo-900/40 flex items-center justify-center border border-white/5">
+                            <iframe src="https://mestradoreiki.vercel.app/" scrolling="no"
+                                class="w-full h-full pointer-events-none" frameborder="0"></iframe>
                         </div>
                     </div>
                     <h3 class="text-lg md:text-2xl font-bold uppercase tracking-tight">Mestre do Reiki</h3>
-                    <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mt-1">Landing Page / Presell</p>
+                    <p class="text-gray-500 text-xs md:text-sm uppercase tracking-widest mt-1">Landing Page / Presell
+                    </p>
                 </div>
             </div>
         </div>
@@ -253,19 +311,30 @@
 
     <section id="servicos" class="py-16 md:py-32 px-6 md:px-10 bg-white text-black">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-[12vw] sm:text-[10vw] md:text-[8vw] font-extrabold uppercase leading-[0.9] mb-12 md:mb-20 tracking-tighter">Nosso Foco</h2>
+            <h2
+                class="text-[12vw] sm:text-[10vw] md:text-[8vw] font-extrabold uppercase leading-[0.9] mb-12 md:mb-20 tracking-tighter">
+                Nosso Foco</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16">
                 <div>
-                    <span class="text-xs font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">01. Web Design</span>
-                    <p class="text-lg md:text-xl leading-snug font-medium">Interfaces que paralisam o scroll e constroem autoridade visual instantânea.</p>
+                    <span
+                        class="text-xs font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">01.
+                        Web Design</span>
+                    <p class="text-lg md:text-xl leading-snug font-medium">Interfaces que paralisam o scroll e constroem
+                        autoridade visual instantânea.</p>
                 </div>
                 <div>
-                    <span class="text-xs font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">02. Performance</span>
-                    <p class="text-lg md:text-xl leading-snug font-medium">Infraestrutura Vercel Edge. Sites que carregam no piscar de olhos.</p>
+                    <span
+                        class="text-xs font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">02.
+                        Performance</span>
+                    <p class="text-lg md:text-xl leading-snug font-medium">Infraestrutura Vercel Edge. Sites que
+                        carregam no piscar de olhos.</p>
                 </div>
                 <div class="sm:col-span-2 lg:col-span-1">
-                    <span class="text-xs font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">03. Resultados</span>
-                    <p class="text-lg md:text-xl leading-snug font-medium">Landing pages desenhadas sob a ótica da conversão e psicologia de vendas.</p>
+                    <span
+                        class="text-xs font-bold border-b-2 border-black pb-2 mb-4 md:mb-6 inline-block uppercase tracking-widest">03.
+                        Resultados</span>
+                    <p class="text-lg md:text-xl leading-snug font-medium">Landing pages desenhadas sob a ótica da
+                        conversão e psicologia de vendas.</p>
                 </div>
             </div>
         </div>
@@ -280,7 +349,8 @@
 
             <div class="space-y-24">
                 <div class="reveal">
-                    <h3 class="text-xl md:text-3xl font-bold uppercase mb-8 border-l-4 border-blue-600 pl-4">1. Landing Page / Portfólio</h3>
+                    <h3 class="text-xl md:text-3xl font-bold uppercase mb-8 border-l-4 border-blue-600 pl-4">1. Landing
+                        Page / Portfólio</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="border border-white/5 p-8 bg-zinc-950/50 hover:bg-zinc-900 transition-colors group">
                             <p class="text-xs uppercase tracking-widest text-zinc-500 mb-6">Versão Avulsa</p>
@@ -294,30 +364,40 @@
                                     <p>• Sem Hospedagem</p>
                                 </div>
                             </div>
-                            <a href="https://wa.me/5521980511433" class="block text-center border border-white/20 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition cursor-none">Solicitar</a>
+                            <a href="https://wa.me/5521980511433"
+                                class="block text-center border border-white/20 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition cursor-none">Solicitar</a>
                         </div>
                         <div class="border-2 border-blue-600 p-8 md:p-10 bg-zinc-950 relative overflow-hidden group">
-                            <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase py-1 px-4 tracking-widest">50% OFF</div>
-                            <p class="text-xs uppercase tracking-widest text-blue-500 mb-6 font-bold">PACOTE DE MANUTENÇÃO ATOM</p>
-                            <h4 class="text-3xl md:text-4xl font-bold uppercase mb-10">Landing Page +<br> HOSPEDAGEM</h4>
+                            <div
+                                class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase py-1 px-4 tracking-widest">
+                                50% OFF</div>
+                            <p class="text-xs uppercase tracking-widest text-blue-500 mb-6 font-bold">PACOTE DE
+                                MANUTENÇÃO ATOM</p>
+                            <h4 class="text-3xl md:text-4xl font-bold uppercase mb-10">Landing Page +<br> HOSPEDAGEM
+                            </h4>
                             <div class="mb-10 flex items-baseline gap-4">
-                                <span class="text-5xl md:text-6xl font-extrabold tracking-tighter text-blue-500">R$ 199,00</span>
+                                <span class="text-5xl md:text-6xl font-extrabold tracking-tighter text-blue-500">R$
+                                    199,00</span>
                                 <span class="text-sm text-zinc-500 line-through">R$ 399,00</span>
                             </div>
-                            <p class="text-xs uppercase font-bold text-zinc-300 tracking-widest">+ R$ 59,00/MÊS DE GESTÃO TOTAL</p>
+                            <p class="text-xs uppercase font-bold text-zinc-300 tracking-widest">+ R$ 59,00/MÊS DE
+                                GESTÃO TOTAL</p>
                             <div class="text-xs uppercase opacity-50 mt-4 mb-10 space-y-1.5 font-medium tracking-wide">
                                 <p>• Entrega de código</p>
                                 <p>• Manutenção Inclusa</p>
                                 <p>• Hospedagem Inclusa</p>
                                 <p>• Domínio Incluso</p>
                             </div>
-                            <a href="https://wa.me/5521980511433" class="block text-center bg-blue-600 text-white py-5 rounded-full text-xs font-bold uppercase tracking-[0.1em] hover:bg-blue-700 transition cursor-none">ASSINAR E GANHAR DESCONTO</a>
+                            <a href="https://wa.me/5521980511433"
+                                class="block text-center bg-blue-600 text-white py-5 rounded-full text-xs font-bold uppercase tracking-[0.1em] hover:bg-blue-700 transition cursor-none">ASSINAR
+                                E GANHAR DESCONTO</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="reveal">
-                    <h3 class="text-xl md:text-3xl font-bold uppercase mb-8 border-l-4 border-white pl-4">2. Site Institucional</h3>
+                    <h3 class="text-xl md:text-3xl font-bold uppercase mb-8 border-l-4 border-white pl-4">2. Site
+                        Institucional</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="border border-white/5 p-8 bg-zinc-950/50 hover:bg-zinc-900 transition-colors group">
                             <p class="text-xs uppercase tracking-widest text-zinc-500 mb-6">Versão Avulsa</p>
@@ -331,24 +411,32 @@
                                     <p>• Sem Hospedagem</p>
                                 </div>
                             </div>
-                            <a href="https://wa.me/5521980511433" class="block text-center border border-white/20 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition cursor-none">Solicitar</a>
+                            <a href="https://wa.me/5521980511433"
+                                class="block text-center border border-white/20 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition cursor-none">Solicitar</a>
                         </div>
                         <div class="border-2 border-blue-600 p-8 md:p-10 bg-zinc-950 relative overflow-hidden group">
-                            <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase py-1 px-4 tracking-widest">66% OFF</div>
-                            <p class="text-xs uppercase tracking-widest text-blue-500 mb-6 font-bold">PACOTE DE MANUTENÇÃO ATOM</p>
+                            <div
+                                class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold uppercase py-1 px-4 tracking-widest">
+                                66% OFF</div>
+                            <p class="text-xs uppercase tracking-widest text-blue-500 mb-6 font-bold">PACOTE DE
+                                MANUTENÇÃO ATOM</p>
                             <h4 class="text-3xl md:text-4xl font-bold uppercase mb-10">SITE +<br> HOSPEDAGEM</h4>
                             <div class="mb-10 flex items-baseline gap-4">
-                                <span class="text-5xl md:text-6xl font-extrabold tracking-tighter text-blue-500">R$ 290,00</span>
+                                <span class="text-5xl md:text-6xl font-extrabold tracking-tighter text-blue-500">R$
+                                    290,00</span>
                                 <span class="text-sm text-zinc-500 line-through">R$ 850,00</span>
                             </div>
-                            <p class="text-xs uppercase font-bold text-zinc-300 tracking-widest">+ R$ 59,00/MÊS DE GESTÃO TOTAL</p>
+                            <p class="text-xs uppercase font-bold text-zinc-300 tracking-widest">+ R$ 59,00/MÊS DE
+                                GESTÃO TOTAL</p>
                             <div class="text-xs uppercase opacity-50 mt-4 mb-10 space-y-1.5 font-medium tracking-wide">
                                 <p>• Entrega de código</p>
                                 <p>• Manutenção Inclusa</p>
                                 <p>• Hospedagem Inclusa</p>
                                 <p>• Domínio Incluso</p>
                             </div>
-                            <a href="https://wa.me/5521980511433" class="block text-center bg-white text-black py-5 rounded-full text-xs font-bold uppercase tracking-[0.1em] hover:bg-zinc-200 transition cursor-none">ASSINAR E GANHAR DESCONTO</a>
+                            <a href="https://wa.me/5521980511433"
+                                class="block text-center bg-white text-black py-5 rounded-full text-xs font-bold uppercase tracking-[0.1em] hover:bg-zinc-200 transition cursor-none">ASSINAR
+                                E GANHAR DESCONTO</a>
                         </div>
                     </div>
                 </div>
@@ -357,15 +445,19 @@
     </section>
 
     <footer id="contato" class="py-16 md:py-32 px-6 md:px-10 border-t border-white/10 relative overflow-hidden">
-        <div class="absolute -bottom-10 -right-10 text-[35vw] font-black text-white/[0.02] pointer-events-none leading-none select-none z-0">
+        <div
+            class="absolute -bottom-10 -right-10 text-[35vw] font-black text-white/[0.02] pointer-events-none leading-none select-none z-0">
             2026
         </div>
 
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 mb-16 md:mb-20">
                 <div>
-                    <h2 class="text-4xl md:text-7xl font-bold uppercase tracking-tighter mb-8 md:mb-10 leading-[0.9]">VAMOS CRIAR<br> O SEU LEGADO.</h2>
-                    <a href="https://wa.me/5521980511433" class="text-lg md:text-3xl font-bold border-b-2 border-white hover:opacity-50 transition pb-2 inline-block cursor-none">WhatsApp Agência ATOM</a>
+                    <h2 class="text-4xl md:text-7xl font-bold uppercase tracking-tighter mb-8 md:mb-10 leading-[0.9]">
+                        VAMOS CRIAR<br> O SEU LEGADO.</h2>
+                    <a href="https://wa.me/5521980511433"
+                        class="text-lg md:text-3xl font-bold border-b-2 border-white hover:opacity-50 transition pb-2 inline-block cursor-none">WhatsApp
+                        Agência ATOM</a>
                 </div>
 
                 <div class="flex flex-col justify-between">
@@ -386,7 +478,8 @@
                 </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-white/5 opacity-30 text-xs uppercase tracking-widest gap-4">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-white/5 opacity-30 text-xs uppercase tracking-widest gap-4">
                 <p>&copy; 2026 Agência ATOM</p>
                 <p>Design Minimalista de Alta Performance</p>
             </div>
@@ -396,15 +489,18 @@
     <div id="projectModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-10">
         <div class="absolute inset-0 bg-black/90 backdrop-blur-md cursor-pointer" onclick="closeModal()"></div>
 
-        <div class="relative w-full max-w-6xl h-[85vh] bg-zinc-950 border border-white/10 rounded-lg flex flex-col overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+        <div class="relative w-full max-w-6xl h-[85vh] bg-zinc-950 border border-white/10 rounded-lg flex flex-col overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+            id="modalContent">
 
             <div class="flex justify-between items-center p-4 border-b border-white/10 bg-zinc-900/50">
                 <div class="flex gap-2">
-                    <div class="w-3 h-3 rounded-full bg-red-500/80 cursor-pointer hover:bg-red-500 transition-colors" onclick="closeModal()"></div>
+                    <div class="w-3 h-3 rounded-full bg-red-500/80 cursor-pointer hover:bg-red-500 transition-colors"
+                        onclick="closeModal()"></div>
                     <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                     <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
                 </div>
-                <button onclick="closeModal()" class="text-white/50 hover:text-white transition-colors uppercase text-xs tracking-widest font-bold cursor-none">
+                <button onclick="closeModal()"
+                    class="text-white/50 hover:text-white transition-colors uppercase text-xs tracking-widest font-bold cursor-none">
                     <span class="hidden md:inline">Fechar [ESC]</span>
                     <span class="md:hidden text-sm"><i class="fa-solid fa-xmark"></i></span>
                 </button>
@@ -417,7 +513,8 @@
                 <iframe id="modalIframe" src="" class="w-full h-full z-10 relative bg-white" frameborder="0"></iframe>
             </div>
         </div>
-        <img src="https://tracker-email-tau.vercel.app/api/imagem?t=Organico_site_ATOM-AGENCY" width="1" height="1" style="display:none;" />
+        <img src="https://tracker-email-tau.vercel.app/api/imagem?t=Organico_site_ATOM-AGENCY" width="1" height="1"
+            style="display:none;" />
     </div>
 
     <script>
@@ -499,7 +596,7 @@
             setTimeout(() => {
                 modal.classList.remove('flex');
                 modal.classList.add('hidden');
-                modalIframe.src = ''; 
+                modalIframe.src = '';
             }, 300);
         }
 
