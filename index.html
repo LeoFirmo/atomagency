@@ -501,20 +501,22 @@
 
 
 
-        function openModal(url) {
-            // Esconde o cursor customizado para não atrapalhar no modal
-            if (cursor) cursor.style.display = 'none';
+function openModal(url) {
+    if (cursor) cursor.style.display = 'none';
 
-            modalIframe.src = url;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+    // Adiciona o parâmetro na URL para avisar o site filho que ele está no portfólio
+    const urlObj = new URL(url);
+    urlObj.searchParams.set('preview', 'true');
 
-            // Delay para a transição funcionar
-            setTimeout(() => {
-                modalContent.classList.remove('scale-95', 'opacity-0');
-                modalContent.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
+    modalIframe.src = urlObj.toString();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+
+    setTimeout(() => {
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+    }, 10);
+}
         
 
         function closeModal() {
